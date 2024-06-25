@@ -3,13 +3,14 @@
 
 const express = require('express')
 const router = express.Router();
+const { protect, authorize } = require('../middlewares/auth')
 
 const userController = require('../controllers/userController')
 
 // Create a new user
 router.post('/users', userController.createUser);
 router.post('/login', userController.loginUser);
-router.get('/data', userController.getAllUsers);
+router.get('/data', protect, authorize('Admin'), userController.getAllUsers);
 router.put('/update/:id', userController.updateUserById);
 
 module.exports = router;

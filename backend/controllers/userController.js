@@ -70,13 +70,23 @@ exports.loginUser = async (req, res) => {
 
 // This function gets me all the users present inside the MongoDB collection Users
 exports.getAllUsers = async (req, res) => {
-    // the logic to get all the data present inside the collection users
-    const users = await User.find({});
-    
-    res.status(200).json({
-        success: true,
-        data: users
-    })
+    try {
+        // for pagination I need page number and limit
+        const { page, limit } = req.query
+
+        // transform my operation to show me only the entries on a specific page with its limit
+        const users = await User.find({}).limit(limit).skip((page-1) * limit).exec();
+            
+        res.status(200).json({
+            success: true,
+            data: users
+        })
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
 }
 
 // This function updates a user by its id
