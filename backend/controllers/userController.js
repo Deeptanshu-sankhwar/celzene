@@ -75,7 +75,9 @@ exports.getAllUsers = async (req, res) => {
         const { page, limit } = req.query
 
         // transform my operation to show me only the entries on a specific page with its limit
-        const users = await User.find({}).limit(limit).skip((page-1) * limit).exec();
+
+        // within my operation I need to write a condition which returns only the users for whom isDelete: false
+        const users = await User.find({ isDeleted: false }).limit(limit).skip((page-1) * limit).exec();
             
         res.status(200).json({
             success: true,
@@ -109,6 +111,66 @@ exports.updateUserById = async (req, res) => {
         res.status(500).json({
             success: false,
             message: 'error occured'
+        })
+    }
+}
+
+// This function is responsible for soft deleting a user from mongodb
+exports.softDeleteById = async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const user = await User.findById(id)
+
+        user.isDeleted = true;
+        user.save();
+
+        res.status(200).json({
+            success: true,
+            data: user
+        })
+    } catch (err)   {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}
+
+// This function is responsible for uploading a file from local machine to the server. My file would be coming inside my request.
+exports.uploadFile = async (req, res) => {
+    try {
+        res.status(201).json({  // uploading a file is quivalent to creating a new data inside the server instance
+            success: true,
+            data: req.file,
+            message: 'File uploaded successfully'
+        })
+    } catch (err)   {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}
+
+exports.uploadMultipleFiles = async (req, res) => {
+    try {
+        if (req.files.length === 0) {
+            res.status(400).json({
+                success: false,
+                message: 'No files were uploaded'
+            })
+        }
+
+        res.status(201).json({  // uploading a file is quivalent to creating a new data inside the server instance
+            success: true,
+            data: req.file,
+            message: 'File uploaded successfully'
+        })
+    } catch (err)   {
+        res.status(500).json({
+            success: false,
+            message: err.message
         })
     }
 }

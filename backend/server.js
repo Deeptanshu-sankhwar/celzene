@@ -6,12 +6,19 @@
 // [X] role level authorisation
 // [X] error handling / exception handling
 // [X] Pagination and filtering at an API level - 40000 posts - NO, 40, 40, 40..... reached rock bottom of the number 40,000
-// [] soft delete and hard delete
+// [X] soft delete and hard delete
 // [X] middleware
 
-// file uploading
-// validations
-// Websockets!
+// [X] file uploading
+// [] validations - Joi is also a middleware
+// [] Websockets!
+
+// fs & multer
+// fs = file storeage, this package has all the functions needed to read, write and append a file
+
+// validation is a set of rules that we want to apply to our data such that there is some format in which the data is inserted
+
+// create an API which takes a document and just stored it inside my server
 
 // 5,000,000 users = 5,000,000 * 0.2 = 1,000,000kB = 1000mB = 1gB
 // 3,000,000,000 users = 3,000,000,000 * 0.2 = 6,000,000,000kB = 6,000,000mB = 6000gB 1
