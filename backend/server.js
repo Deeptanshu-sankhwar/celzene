@@ -1,5 +1,5 @@
 // Library Management System: Role: Admin, Student (Backend)
-// [X] Ability to login/signup
+// 1. Ability to login/signup
 // 2. The Admin shall be able to see all the students who are in the library
 // 3. The Admin shall be able to see all the book inside the library
 // 4. The student can issue a book from the library if it is available. Student needs to return book in 1 week
@@ -9,6 +9,15 @@
 // 8. New books will be added by the Admin
 // 9. Student can request a book
 // 10. Autocomplete from the list of books
+
+// Technical Planning
+// [X] API are present for login/signup (creatUser) which can create a student or admin
+// [X] Create an API that can only be authorise by the Admin, which returns a list of students
+// [X] Create a model for book. Then, write an API which fetches the list of all the books. I will not authorise this API, since both students and admin can view list of books. But this API needs to be authenticated, since I dont want anybody to call this API who is not a user of my library.
+// [X] Inside the Book document, we need to have a relationship between book and student id which basically tells us that the book has been issued to a student.
+// 5. Return the book details, along with the student git who has issued the book. This API can be accessed only by Admin.
+// 6. 
+
 
 // Explanation of point 10: books : ['White Tiger', 'White Lion', 'Eye of the Lion']. Search: whi -> 'white lion' & 'white tiger', lion -> 'eye of the lion', 'white lion'
 
@@ -64,8 +73,10 @@ mongoose.connection.on('connected', () => {
 })
 
 const userRoutes = require('./routes/userRoute')
+const bookRoutes = require('./routes/bookRoute')
 
 app.use('/api', userRoutes)
+app.use('/api', bookRoutes)
 
 // listen on port 8080 and start my server
 app.listen(port, () => {

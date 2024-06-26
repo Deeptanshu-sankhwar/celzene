@@ -19,4 +19,6 @@ router.put('/delete/:id', userController.softDeleteById)
 router.post('/upload', upload.single('file'), userController.uploadFile)
 router.post('/upload-multiple', upload.array('files', 5), userController.uploadMultipleFiles)
 
+router.get('/getAllStudents', protect, authorize('Admin'), userController.getAllStudents)
+
 module.exports = router;
