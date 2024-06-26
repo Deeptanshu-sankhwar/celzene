@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken'); // npm install jsonwebtoken
 
-const secretKey = "celzene"
+const secretKey = "hello"
 
 // middlware happens between request and response
 // next is a node js inbuilt function which triggers the API flow to move forward. When our task is complete successfully inside the middleware, we call the next function triggering the API flow to move forward
@@ -14,10 +14,11 @@ const protect = async (req, res, next) => {
             const decoded = jwt.verify(token, secretKey)
             req.user = decoded;
             next();
+
         } catch (error) {
             res.status(401).json({
                 success: false,
-                message: 'Token is invalid or expired'
+                message: error.message
             })
         }
     }

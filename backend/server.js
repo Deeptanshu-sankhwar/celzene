@@ -4,9 +4,11 @@
 // 3. The Admin shall be able to see all the book inside the library
 // 4. The student can issue a book from the library if it is available. Student needs to return book in 1 week
 // 5. The admin shall see what all books have been issued and their due dates, also which student has issued them.
-// 6. If the admin finds that a student has kept the book more than due date, the admin shall be able to send an email reminder to the student
-// 7. The student can return a book
-// 8. New books will be added by the Admin
+// 6. New books will be added by the Admin
+
+
+// 7. If the admin finds that a student has kept the book more than due date, the admin shall be able to send an email reminder to the student
+// 8. The student can return a book
 // 9. Student can request a book
 // 10. Autocomplete from the list of books
 
@@ -15,8 +17,8 @@
 // [X] Create an API that can only be authorise by the Admin, which returns a list of students
 // [X] Create a model for book. Then, write an API which fetches the list of all the books. I will not authorise this API, since both students and admin can view list of books. But this API needs to be authenticated, since I dont want anybody to call this API who is not a user of my library.
 // [X] Inside the Book document, we need to have a relationship between book and student id which basically tells us that the book has been issued to a student.
-// 5. Return the book details, along with the student git who has issued the book. This API can be accessed only by Admin.
-// 6. 
+// [X] Return the book details, along with the student details who has issued the book. This API can be accessed only by Admin.
+// [X] Write an API to create a book. This API can be accessed only by Admin. Since only admin can introduce new books in the library.
 
 
 // Explanation of point 10: books : ['White Tiger', 'White Lion', 'Eye of the Lion']. Search: whi -> 'white lion' & 'white tiger', lion -> 'eye of the lion', 'white lion'

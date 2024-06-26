@@ -3,7 +3,7 @@
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken')
 
-const secretKey = "celzene"
+const secretKey = "hello"
 
 // Generate a token
 const generateToken = (id, role) => {
@@ -50,7 +50,6 @@ exports.loginUser = async (req, res) => {
         // mongoDb operation to find the user
         const user = await User.findOne({ email: email })
 
-        console.log("password", password)
         if (user && (await user.matchPassword(password)))   {
             const token = generateToken(user._id, user.role);
 

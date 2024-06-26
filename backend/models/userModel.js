@@ -39,7 +39,6 @@ userSchema.pre('save', async function (next)    {
 // Write a function that decrypts my password while comparing. Basically compares the value of user actual password against its encrypted password stored in the database
 userSchema.methods.matchPassword = async function (enteredPassword) { // enteredpassword is coming from request body
 
-    console.log("enteredPassword", enteredPassword);
     return await bcrypt.compare(enteredPassword, this.password)
 }
 

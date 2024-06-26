@@ -22,7 +22,8 @@ const bookSchema = new mongoose.Schema({
         required: false,
     },
     issuedBy: {
-        type: String,   // this would be the id of the student who has issued this book
+        type: mongoose.Schema.Types.ObjectId,   // we have made sure that issuedBy would always be an ObjectId
+        ref: 'User',
         default: null // if this is null, it means the book is not issued to any student and it is available
     },
     issuedAt: {
