@@ -1,4 +1,18 @@
-// Library Management System: Role: Admin, Student, Teacher
+// Library Management System: Role: Admin, Student (Backend)
+// [X] Ability to login/signup
+// 2. The Admin shall be able to see all the students who are in the library
+// 3. The Admin shall be able to see all the book inside the library
+// 4. The student can issue a book from the library if it is available. Student needs to return book in 1 week
+// 5. The admin shall see what all books have been issued and their due dates, also which student has issued them.
+// 6. If the admin finds that a student has kept the book more than due date, the admin shall be able to send an email reminder to the student
+// 7. The student can return a book
+// 8. New books will be added by the Admin
+// 9. Student can request a book
+// 10. Autocomplete from the list of books
+
+// Explanation of point 10: books : ['White Tiger', 'White Lion', 'Eye of the Lion']. Search: whi -> 'white lion' & 'white tiger', lion -> 'eye of the lion', 'white lion'
+
+// [ADVANCED]: Add fines to students when they don't return the book before due date, If student lost the book
 
 // [X] we need to encrypt the password before storing inside the database - decrypt password using a secret key
 // [X] make the apis protected - security layer 2
@@ -8,9 +22,9 @@
 // [X] Pagination and filtering at an API level - 40000 posts - NO, 40, 40, 40..... reached rock bottom of the number 40,000
 // [X] soft delete and hard delete
 // [X] middleware
-
 // [X] file uploading
-// [] validations - Joi is also a middleware
+// [X] validations - Joi is also a middleware
+
 // [] Websockets!
 
 // fs & multer
