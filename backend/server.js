@@ -36,7 +36,7 @@
 // [X] file uploading
 // [X] validations - Joi is also a middleware
 
-// [] Websockets! - chat, gaming
+// [X] Websockets! - chat, gaming
 
 // fs & multer
 // fs = file storeage, this package has all the functions needed to read, write and append a file
