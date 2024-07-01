@@ -3,4 +3,4 @@
 [X] Write an API to handle the feature when a student issues a book (point 9). Write an API which update the issuedAt & issusedBy of a book to the time at which the book is issued and the student's id respectively.
 [X] Checkout the package nodemailer
 [X] Write an API to send an email to a given email address using nodemailer
-[] Checkout the operation to match the letter of a string in mongoose. Eg: books : ['White Tiger', 'White Lion', 'Eye of the Lion']. Search: whi -> 'white lion' & 'white tiger', lion -> 'eye of the lion', 'white lion'
+[X] Checkout the operation to match the letter of a string in mongoose. Eg: books : ['White Tiger', 'White Lion', 'Eye of the Lion']. Search: whi -> 'white lion' & 'white tiger', lion -> 'eye of the lion', 'white lion'

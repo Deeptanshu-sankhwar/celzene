@@ -127,3 +127,33 @@ exports.issueBook = async (req, res) => {
         })
     }
 }
+
+// regex - format of a string
+// firstname middlename lastname {regex of an indian name}
+// [a-zA-Z][a-zA-Z0-9]*@[a-zA-Z]*.[com|in|org|io|net|au] regex of an email
+// [a-zA-Z]* [a-zA-Z]* [a-zA-Z]* regex of an indian name
+// Fall of the giants, The Subtle art of something
+// fa -> book called Fall of the giants
+exports.searchBook = async (req, res) => {
+    const { query } = req.params;
+
+    try {
+        const books = await Book.find({
+            $or: [
+                { title: { $regex: query, $options: 'i' } },
+                { author: { $regex: query, $options: 'i' } },
+            ],
+            isDeleted: false
+        })
+
+        res.status(200).json({
+            success: true,
+            data: books
+        })
+    } catch (err)   {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}

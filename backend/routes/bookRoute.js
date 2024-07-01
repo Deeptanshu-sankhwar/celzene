@@ -11,4 +11,7 @@ router.post('/createBook', protect, authorize('Admin'), bookController.createBoo
 router.put('/returnBook/:id', protect, authorize('Student'), bookController.returnBook)
 router.put('/issueBook/:id', protect, authorize('Admin'), bookController.issueBook)
 
+// search book api by its title and author
+router.get('/books/search/:query', bookController.searchBook)
+
 module.exports = router
