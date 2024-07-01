@@ -67,3 +67,63 @@ exports.createBook = async (req, res) => {
         })
     }
 }
+
+exports.returnBook = async (req, res) => {
+    try {
+        // update the issuedAt & issuedBy to null
+        const { id } = req.params
+
+        const book = await Book.findByIdAndUpdate(
+            id,
+            { issuedAt: null, issuedBy: null }
+        );
+
+        if (!book)  {   // resource not found
+            res.status(404).json({
+                success: false,
+                messsage: "No such book exists in the database"
+            })
+        }
+
+        res.status(200).json({
+            success: true,
+            data: book
+        })
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}
+
+exports.issueBook = async (req, res) => {
+    try {
+        // update the issuedAt & issuedBy to current time & student id respectively
+        const { id } = req.params
+        const { studentId } = req.body
+
+        const book = await Book.findByIdAndUpdate(
+            id,
+            { issuedAt: Date.now(), issuedBy: studentId }
+        );
+
+        if (!book)  {   // resource not found
+            res.status(404).json({
+                success: false,
+                messsage: "No such book exists in the database"
+            })
+        }
+
+        res.status(200).json({
+            success: true,
+            data: book
+        })
+
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}

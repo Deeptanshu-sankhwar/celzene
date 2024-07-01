@@ -21,4 +21,7 @@ router.post('/upload-multiple', upload.array('files', 5), userController.uploadM
 
 router.get('/getAllStudents', protect, authorize('Admin'), userController.getAllStudents)
 
+// this api sends email to someone
+router.post('/sendEmail', userController.sendEmail)
+
 module.exports = router;

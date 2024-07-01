@@ -2,6 +2,7 @@
 
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken')
+const { sendEmail } = require('../utils/email')
 
 const secretKey = "hello"
 
@@ -183,6 +184,24 @@ exports.getAllStudents = async (req, res) => {
         res.status(200).json({
             success: true,
             data: users
+        })
+    } catch (err)   {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}
+
+exports.sendEmail = async (req, res) => {
+    const { to, subject, text } = req.body;
+
+    try {
+        await sendEmail(to, subject, text);
+
+        res.status(200).json({
+            success: true,
+            message: 'Email sent successfully to ' + to
         })
     } catch (err)   {
         res.status(500).json({
