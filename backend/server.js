@@ -36,7 +36,7 @@
 // [X] file uploading
 // [X] validations - Joi is also a middleware
 
-// [] Websockets!
+// [] Websockets! - chat, gaming
 
 // fs & multer
 // fs = file storeage, this package has all the functions needed to read, write and append a file
@@ -53,6 +53,7 @@
 // google and understand the difference between authentication and authorization
 
 const express = require('express'); // npm install express
+const { Server } = require('socket.io'); // npm install socket.io
 
 // import mongoose package - has functions required to perform operations in mongodb starting all the way connecting to the cluser to making changes in the data
 const mongoose = require('mongoose'); // npm install mongoose
@@ -80,7 +81,37 @@ const bookRoutes = require('./routes/bookRoute')
 app.use('/api', userRoutes)
 app.use('/api', bookRoutes)
 
-// listen on port 8080 and start my server
-app.listen(port, () => {
+// listen on port 4000 and start my server
+const server = app.listen(port, () => {
     console.log("My server has started on the port " + port)
 })
+
+// HTTP and websockets are seprarate networking protocols, hence we need to listen on different ports for http1 and websockets
+
+// This part contains the code for creating and initializing a websocket server
+// Initializing a websocket server
+const io = new Server(server);
+
+// Listen for websocket connections
+io.on('connection', (socket) => {
+    console.log("New client connected")
+
+    // Send a welcome message to the connected client
+    socket.emit('message', "Welcome to the library management system!");
+
+    // Listen for message from the client
+    socket.on('message', (message) => {
+        console.log("Received this message: " + message)
+
+        // broadcast this message to all the connected clients
+        io.emit('message', message)
+    })
+
+    // Listen for the connection close event
+    socket.on('disconnect', () => {
+        console.log("Client Disconnected")
+    })
+})
+
+// on the event of Christmas, we make plum cakes | event = 'Christmas', function() = make plum cake
+// an event is the occurance of something which triggers a function to call
