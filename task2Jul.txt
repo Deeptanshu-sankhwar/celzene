@@ -1,0 +1,6 @@
+[] Create a file called Task.js which will be imported inside App.js
+[] Comment CounterApp from App.js such that it doesn't show up on the UI
+[] Inside Task.js, create a simple to do app list, where users can add a Task
+[] Delete the task from the list
+[] No Database or backend needs to be used here. Solve this using properties and states.
+[] Break your components into child components wherever possible.

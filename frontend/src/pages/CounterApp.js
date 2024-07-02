@@ -13,17 +13,19 @@ function CounterApp()   {
 
     const [count, setCount] = useState(0)
     const [step, setStep] = useState(1)
+    const [maxLimit, setMaxLimit] = useState(10)
+    const [minLimit, setMinLimit] = useState(-10)
     // count is the variable, and setCount is the function which we will use to update the value of the variable count and trigger re rendering of our UI
 
     // Write two functions, one to increase the value of count by 1, second to decrease the value of count by 1
     const increment = () => {
-        if (count < 10)    {
+        if (count < maxLimit)    {
             setCount(count + step); // increase the value of count by 1 and trigger the UI to re render
         }
     }
 
     const decrement = () => {
-        if (count > -10)    {
+        if (count > minLimit)    {
             setCount(count - step); // decrease the value of count by 1 and trigger the UI to re render
         }
     }
@@ -34,6 +36,14 @@ function CounterApp()   {
 
     const handleStepChange = (e) => {    // this function updates the value of step, when it is edited inside the input tag
         setStep(parseInt(e.target.value));
+    }
+
+    const handleMaxLimitChange = (e) => {
+        setMaxLimit(parseInt(e.target.value));
+    }
+
+    const handleMinLimitChange = (e) => {
+        setMinLimit(parseInt(e.target.value));
     }
 
     console.log("step data type", step, typeof step)
@@ -52,14 +62,25 @@ function CounterApp()   {
         </div>
 
         <div>
+            <p>Step Value</p>
             <input type="number" value={step} onChange={handleStepChange} ></input>
         </div>
 
+        <div>
+            <p>Maximum Limit</p>
+            <input type="number" value={maxLimit} onChange={handleMaxLimitChange} ></input>
+        </div>
+
+        <div>
+            <p>Minimum Limit</p>
+            <input type="number" value={minLimit} onChange={handleMinLimitChange} ></input>
+        </div>
+
         {
-            count >= 10 && <h2>Increment is not possible!</h2>
+            count >= maxLimit && <h2>Increment is not possible!</h2>
         }
         {
-            count <= -10 && <h2>Decrement is not possible!</h2>
+            count <= minLimit && <h2>Decrement is not possible!</h2>
         }
       </>
     )
