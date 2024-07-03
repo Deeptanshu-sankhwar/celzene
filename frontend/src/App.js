@@ -1,5 +1,6 @@
 import './App.css';
 import CounterApp from './pages/CounterApp';
+import Task from './pages/Task';
 
 // This app is a counter application
 
@@ -9,7 +10,8 @@ function App() {  // App component - This is ultimate parent component of my web
   
   return (
     <div className="App">
-      <CounterApp />
+      {/* <CounterApp /> */}
+      <Task />
     </div>
   );
 }
