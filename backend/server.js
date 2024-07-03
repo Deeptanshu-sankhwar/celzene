@@ -57,11 +57,13 @@ const { Server } = require('socket.io'); // npm install socket.io
 
 // import mongoose package - has functions required to perform operations in mongodb starting all the way connecting to the cluser to making changes in the data
 const mongoose = require('mongoose'); // npm install mongoose
+var cors = require('cors')
 
 const app = express();
 
 // middleware
 app.use(express.json());
+app.use(cors())
 
 const port = 4000
 
