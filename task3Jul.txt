@@ -1,2 +1,2 @@
-[] You will create a Navbar UI component
-[] You will create a new screen which calls the API to get all the users in the database and show those users in a table
+[X] You will create a Navbar UI component
+[X] You will create a new screen which calls the API to get all the users in the database and show those users in a table

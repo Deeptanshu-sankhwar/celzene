@@ -24,7 +24,11 @@ function Login()   {
 
         // Now I will creat a POST HTTP call using Axios library where I will pass the payload object in the request
         const response = await axios.post('http://localhost:4000/api/login', payload)
-        console.log(response)
+        console.log(response.data.token)
+        // take this token and assign it in the local storage
+        localStorage.setItem('token', response.data.token);
+
+        // local storage is a short database inside our browser which stores data in key-value pairs
     }
 
     return (

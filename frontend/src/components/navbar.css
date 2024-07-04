@@ -1,0 +1,17 @@
+.navbar {
+    background-color: azure;
+    overflow: hidden;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    display: inline;
+    padding: 14px 64px;
+    font-size: 24px;
+}
