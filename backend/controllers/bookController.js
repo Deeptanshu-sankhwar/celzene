@@ -157,3 +157,51 @@ exports.searchBook = async (req, res) => {
         })
     }
 }
+
+// This function is responsible for soft deleting a book from mongodb
+exports.softDeleteById = async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const book = await Book.findById(id)
+
+        book.isDeleted = true;
+        book.save();
+
+        res.status(200).json({
+            success: true,
+            data: book
+        })
+    } catch (err)   {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}
+
+// this functions return me all the books which are issued by a given user
+exports.getBooksIssuedByUser = async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const books = await Book.find({ issuedBy: userId })
+
+        if (!books) {
+            res.status(404).json({
+                success: false,
+                message: 'No books found'
+            })
+        }
+
+        res.status(200).json({
+            success: true,
+            data: books
+        })
+    } catch (err)   {
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}

@@ -14,4 +14,9 @@ router.put('/issueBook/:id', protect, authorize('Admin'), bookController.issueBo
 // search book api by its title and author
 router.get('/books/search/:query', bookController.searchBook)
 
+// return me all the books issued by a given user
+router.get('/books/issued/:userId', protect, bookController.getBooksIssuedByUser)
+
+router.put('/book/delete/:id', bookController.softDeleteById)
+
 module.exports = router

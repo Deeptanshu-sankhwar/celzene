@@ -1,0 +1,4 @@
+[] Inside searchbar.js, create the UI to map over all the searched books
+[] Write an API in the userRoutes which allows the user to edit his/her name
+[] Inside the user profile screen, integrate this API to edit the user name and show the UI where the user can edit his/her name
+[] Work on beautifying the CSS of the application

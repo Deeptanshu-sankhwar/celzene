@@ -19,6 +19,9 @@ router.put('/delete/:id', userController.softDeleteById)
 router.post('/upload', upload.single('file'), userController.uploadFile)
 router.post('/upload-multiple', upload.array('files', 5), userController.uploadMultipleFiles)
 
+// this api gets me the data about a single user from his/her id
+router.get('/user/:id', protect, userController.getUserById)
+
 router.get('/getAllStudents', protect, authorize('Admin'), userController.getAllStudents)
 
 // this api sends email to someone

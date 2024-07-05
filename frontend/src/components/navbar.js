@@ -24,6 +24,9 @@ function Navbar()   {
                 <li>
                     <Link to="/books">Show Books</Link>
                 </li>
+                <li>
+                    <Link to="/user-profile">User Profile</Link>
+                </li>
             </ul>
         </nav>
     )

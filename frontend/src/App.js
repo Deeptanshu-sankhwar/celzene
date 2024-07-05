@@ -5,8 +5,10 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar.js';
+import SearchBar from './components/searchbar.js';
 import ShowUsersScreen from './pages/ShowUsersScreen'
 import ShowBooksScreen from './pages/ShowBooksScreen'
+import UserProfile from './pages/UserProfile'
 
 // This app is a counter application
 
@@ -18,15 +20,15 @@ import ShowBooksScreen from './pages/ShowBooksScreen'
 // [X] Navbar
 // [X] There should be a screen where the admin can see all the users of the library, there should be a button for admin to remove (ban) some users
 // [X] A screen with table that show all the books, Displaying images and details of books
-// 5. We will also show that the book is isseued or not
-// 6. There should be some UI to delete the book
-// 7. There should be some UI to issue the book to the student
-// 8. There should be some UI for the student to return the book
-// 9. Admin should see a screen where he/she can send reminders to students who have issued the book
-// 10. Screen where user can edit his/her name, password etc? (User Management Module)
-// 11. There should be a screen for the student to view the book he has currently issued
-// 12. Search bar which will search for books
-// 13. Dropdown which shows all the books
+// [X] We will also show that the book is isseued or not
+// [X] There should be some UI to delete the book
+// [X] There should be some UI to issue the book to the student
+// [X] Dropdown which shows all the users
+// [X] There should be some UI for the student to return the book
+// [X] There should be a screen for the student to view the book he has currently issued
+// 11. Search bar which will search for books
+// 12. Screen where user can edit his/her name? (User Management Module)
+// 13. Admin should see a screen where he/she can send reminders to students who have issued the book
 // 14. Upload the book image
 // 15. Responsiveness (Screen should be readable and understandable across all devices) - Layout [Responsive Layout]
 
@@ -44,6 +46,7 @@ function App() {  // App component - This is ultimate parent component of my web
     <Router>
         <div className="App">
         <Navbar />
+        <SearchBar />
         <Routes>
           <Route path="/" element={<Signup />} />
           <Route path="/login" element={<Login />} />
@@ -51,6 +54,7 @@ function App() {  // App component - This is ultimate parent component of my web
           <Route path="/counter" element={<CounterApp />} />
           <Route path="/showUsers" element={<ShowUsersScreen />} />
           <Route path="/books" element={<ShowBooksScreen />} />
+          <Route path="/user-profile" element={<UserProfile />} />
         </Routes>
       </div>
 

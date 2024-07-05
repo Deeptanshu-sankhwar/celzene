@@ -1,0 +1,9 @@
+.searchbar {
+    margin: auto
+}
+
+.searchbar input {
+    margin: 24px;
+    font-size: 24px;
+    width: 400px;
+}
