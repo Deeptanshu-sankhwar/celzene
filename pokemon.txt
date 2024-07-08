@@ -1,0 +1,13 @@
+PokeMon Website (Just create the React App using poke api, dont write a backend of your own)
+
+BASE URL: https://pokeapi.co/api/v2/pokemon
+
+Documentation: https://pokeapi.co/docs/v2
+
+Website: https://pokeapi.co/
+
+
+1. A list of all the pokemons which are paginated
+2. Implement a search bar to filter pokemon by name
+3. I want a to click on any one of the pokemon from the list and dsiplay its infromation in a single page like image, ability, stats, type etc etc
+3. Filter pokemon, there should be something like a dropdown where I can select let's say the ability or type or anything of a pokemon and show only those pokemons inside my frotend

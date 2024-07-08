@@ -95,13 +95,13 @@ exports.getAllUsers = async (req, res) => {
 exports.updateUserById = async (req, res) => {
     // find a user by its id and update it
     const { id } = req.params
-    const { name, email } = req.body
+    const { name } = req.body
 
     // error handling
 
     try { // we write all the usual logic of our code here, assuming everything works fine
         // this is the operation to find and update the user
-        const user = await User.findByIdAndUpdate(id, { name: name, email: email })
+        const user = await User.findByIdAndUpdate(id, { name: name })
 
         res.status(200).json({
             success: true,

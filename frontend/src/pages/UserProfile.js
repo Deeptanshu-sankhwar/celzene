@@ -4,6 +4,12 @@
 // [X] Write an API that returns the books which the logged in user has issued
 // [X] I need to show a table which contains the list of books issed by the signed user
 
+// GOAL: Inside the user profile screen, integrate this API to edit the user name and show the UI where the user can edit his/her name
+// [X] There will be an edit button and a submit button, next to the user name.
+// [X] Clicking the edit button will conditionally render an input field to retype the user name
+// [X] After this, once we click on the submit button, it should call the API and update the user name on the UI if the API ran successfully
+// When I click on the submit button, we need to call the API to update, then if API gives correct response, we update the name and user state value, then we go back to the read mode from the edit mode
+
 import { useState, useEffect } from "react"
 import { jwtDecode } from 'jwt-decode'  // npm install jwt-decode
 import axios from 'axios' // npm install axios
@@ -13,6 +19,11 @@ function UserProfile() {
 
     const [user, setUser] = useState()
     const [books, setBooks] = useState([])
+
+    const [name, setName] = useState('')
+
+    // this state tells me whether my user is in edit mode or read mode
+    const [isEditMode, setIsEditMode] = useState(false)
 
     // [X] I need to fetch the current token from my local storage -> Stage 2
     // [X] I need to extract the id of the user from the local storage -> Stage 2
@@ -34,6 +45,7 @@ function UserProfile() {
 
         if (response.status === 200)    {
             setUser(response.data.data)
+            setName(response.data.data?.name)
         } else {
             alert("There is an error while calling the API. Please try again.")
         }
@@ -82,14 +94,52 @@ function UserProfile() {
         }
     }
 
-    console.log("The user has these following books", books)
+    const goToEditMode = () => {
+        setIsEditMode(true)
+    }
+
+    const handleSubmit = async ()  => {
+        const token = localStorage.getItem('token');
+
+        const payload = {
+            name: name
+        }
+
+        const response = await axios.put('http://localhost:4000/api/update/' + user?._id, payload, {
+            headers: {
+                'authorization': 'Bearer ' + token
+            }
+        })
+
+        if (response.status === 200)    {
+            user.name = name
+            setUser(user)
+            setName(name)
+            setIsEditMode(false)
+        } else {
+            alert("There is an error while updating the user details")
+        }
+    }
+
+    console.log("Edit mode", isEditMode, name)
 
     return (
         <div>
             <h1>User profile who is logged in!</h1>
 
             <div>
-                <h4>Name: {user?.name}</h4>
+                <h4>Name: 
+                    {
+                        isEditMode ? 
+                        <>
+                        <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input> 
+                        <button onClick={handleSubmit}>Submit</button>
+                        </>
+                        : 
+                        <>{user?.name}</>
+                    }
+                    <button onClick={goToEditMode}>Edit</button>
+                </h4>
                 <h4>Email: {user?.email}</h4>
                 <h4>Role: {user?.role}</h4>
             </div>

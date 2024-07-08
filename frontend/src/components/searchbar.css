@@ -7,3 +7,31 @@
     font-size: 24px;
     width: 400px;
 }
+
+.searchResults {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.searchResults table {
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.searchResults table tr {
+    border: 1px solid black;
+}
+
+.searchResults td {
+    padding: 12px;
+}
+
+.header{
+    background-color: orange;
+}
+
+.searchResults td img {
+    width: 50px;
+}
