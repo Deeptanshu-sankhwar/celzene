@@ -9,6 +9,7 @@ import SearchBar from './components/searchbar.js';
 import ShowUsersScreen from './pages/ShowUsersScreen'
 import ShowBooksScreen from './pages/ShowBooksScreen'
 import UserProfile from './pages/UserProfile'
+import SnakeGame from './pages/SnakeGame';
 
 // This app is a counter application
 
@@ -55,6 +56,7 @@ function App() {  // App component - This is ultimate parent component of my web
           <Route path="/showUsers" element={<ShowUsersScreen />} />
           <Route path="/books" element={<ShowBooksScreen />} />
           <Route path="/user-profile" element={<UserProfile />} />
+          <Route path="/snake" element={<SnakeGame />} />
         </Routes>
       </div>
 

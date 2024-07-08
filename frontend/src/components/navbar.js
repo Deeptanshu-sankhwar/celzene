@@ -27,6 +27,9 @@ function Navbar()   {
                 <li>
                     <Link to="/user-profile">User Profile</Link>
                 </li>
+                <li>
+                    <Link to="/snake">Snake Game</Link>
+                </li>
             </ul>
         </nav>
     )
