@@ -27,8 +27,8 @@ import SnakeGame from './pages/SnakeGame';
 // [X] Dropdown which shows all the users
 // [X] There should be some UI for the student to return the book
 // [X] There should be a screen for the student to view the book he has currently issued
-// 11. Search bar which will search for books
-// 12. Screen where user can edit his/her name? (User Management Module)
+// [X] Search bar which will search for books
+// [X] Screen where user can edit his/her name? (User Management Module)
 // 13. Admin should see a screen where he/she can send reminders to students who have issued the book
 // 14. Upload the book image
 // 15. Responsiveness (Screen should be readable and understandable across all devices) - Layout [Responsive Layout]
