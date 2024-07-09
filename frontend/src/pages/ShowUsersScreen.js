@@ -68,6 +68,22 @@ function ShowUsersScreen()  {
         }
     }
 
+    const sendReminder = async (to) => {
+        const payload = {
+            to: to,
+            subject: "Return the book",
+            text: "This is a gentle reminder for you to return the book"
+        }
+
+        const response = await axios.post('http://localhost:4000/api/sendEmail', payload)
+
+        if (response.status === 200)    {
+            alert('Email sent successfully')
+        } else {
+            alert('Some error while trying to send the email')
+        }
+    }
+
     console.log("Print all users", users)
 
     return (
@@ -83,6 +99,7 @@ function ShowUsersScreen()  {
                         <th>Email</th>
                         <th>Role</th>
                         <th>Delete</th>
+                        <th>Send Reminder</th>
                     </tr>
                 }
 
@@ -95,6 +112,7 @@ function ShowUsersScreen()  {
                                 <td>{user.email}</td>
                                 <td>{user.role}</td>
                                 <td><button onClick = {() => softDeleteUser(user._id)}>Delete</button></td>
+                                <td><button onClick = {() => sendReminder(user.email)}>Send Reminder</button></td>
                             </tr>
                         )
                     })

@@ -1,0 +1,4 @@
+[] Complete upload file integration for LMS
+[] Make the css of library management system responsive and stylish
+[] Write the React page for Pokemon Detail which comes after clicking on any pokemon inside the pokemon list
+[] Add the filter search bar on the Pokemon List page to filter pokemons

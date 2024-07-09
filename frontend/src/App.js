@@ -1,15 +1,16 @@
 import './App.css';
-import CounterApp from './pages/CounterApp';
+import CounterApp from './pages/CounterApp/CounterApp';
 import Task from './pages/Task';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Navbar from './components/navbar.js';
-import SearchBar from './components/searchbar.js';
+import Navbar from './components/Navbar/navbar.js';
+import SearchBar from './components/SearchBar/searchbar.js';
 import ShowUsersScreen from './pages/ShowUsersScreen'
 import ShowBooksScreen from './pages/ShowBooksScreen'
 import UserProfile from './pages/UserProfile'
-import SnakeGame from './pages/SnakeGame';
+import SnakeGame from './pages/SnakeGame/SnakeGame';
+import PokemonList from './pages/PokemonList/PokemonList';
 
 // This app is a counter application
 
@@ -29,7 +30,7 @@ import SnakeGame from './pages/SnakeGame';
 // [X] There should be a screen for the student to view the book he has currently issued
 // [X] Search bar which will search for books
 // [X] Screen where user can edit his/her name? (User Management Module)
-// 13. Admin should see a screen where he/she can send reminders to students who have issued the book
+// [X] Admin should see a screen where he/she can send reminders to students who have issued the book
 // 14. Upload the book image
 // 15. Responsiveness (Screen should be readable and understandable across all devices) - Layout [Responsive Layout]
 
@@ -47,7 +48,7 @@ function App() {  // App component - This is ultimate parent component of my web
     <Router>
         <div className="App">
         <Navbar />
-        <SearchBar />
+        {/* <SearchBar /> */}
         <Routes>
           <Route path="/" element={<Signup />} />
           <Route path="/login" element={<Login />} />
@@ -57,6 +58,7 @@ function App() {  // App component - This is ultimate parent component of my web
           <Route path="/books" element={<ShowBooksScreen />} />
           <Route path="/user-profile" element={<UserProfile />} />
           <Route path="/snake" element={<SnakeGame />} />
+          <Route path="/pokemon" element={<PokemonList />} />
         </Routes>
       </div>
 

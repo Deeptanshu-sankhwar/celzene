@@ -1,5 +1,5 @@
 // App -> CounterApp -> Button
-import Button from '../components/button'
+import Button from '../../components/Button/button'
 import { useState } from "react"
 
 // I want to increment my counter, but I only want to increment it till 10. 
