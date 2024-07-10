@@ -13,8 +13,17 @@
 
 .snake {
     background-color: green;
+    border-radius: 15px;
+    width: 90%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5)
+}
+
+.head {
+    background-image: url('https://m.media-amazon.com/images/I/714ADUXiuTL.png');
+    background-size: cover;
 }
 
 .food {
-    background-color: red;
+    background-image: url('https://www.shutterstock.com/image-vector/vector-pixel-art-isolated-fat-600w-1647410248.jpg');
+    background-size: cover;
 }

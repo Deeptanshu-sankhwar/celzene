@@ -116,7 +116,7 @@ function SnakeGame() {
             {
                 Array.from({ length: GRID_SIZE }).map((_, row) => 
                     Array.from({ length: GRID_SIZE }).map((_, col) => (
-                        <div className={`cell ${snake.some(segment => segment.x === col && segment.y === row) ? 'snake' : ''} ${(food.x === col && food.y === row) ? 'food' : ''}`}>
+                        <div className={`cell ${(food.x === col && food.y === row) ? 'food' : ''} ${(snake[0].x === col && snake[0].y === row) ? 'head' : snake.some(segment => segment.x === col && segment.y === row) ? 'snake' : ''}`}>
                             
                         </div>
                     ))
