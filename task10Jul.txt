@@ -1,0 +1,25 @@
+ROCK PAPER SCISSORS
+
+1. Create a screen where two users can take turns while playing a game of rock paper scissors
+2. Maintain a scorecard for both of the users and display it on the screen
+3. There should be option to restart the game, which initialises the scoreboard to 0 for both the users
+4. Before the game starts, the user shall select the number of moves in the game of rock paper scissors
+5. Once the number of moves are over in the game, declare the winner among the two users
+
+Rules for a game between user 1 & user 2
+1. If we have a combination of rock and rock, nobody scores any point
+2. If we have a combination of paper and paper, nobody scores any point
+3. If we have a combination of scissors and scissors. nobody scores any point
+4. If we have a combination of rock and paper, user2 scores one point
+5. If we have a combination of rock and scissors, user1 scores one point
+6. If we have a combination of paper and scissors, user2 scores one point
+
+Round = 5
+
+Round Narendra Deeptanshu Scorecard
+1     rock     paper      N:0 | D:1
+2     scissors rock       N:0 | D:2
+3     scissors paper      N:1 | D:2
+4     paper    rock       N:2 | D:2
+5     rock     scissors   N:3 | D:2
+GAME OVER => WINNER = Narendra
