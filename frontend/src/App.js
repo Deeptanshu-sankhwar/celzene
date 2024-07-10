@@ -11,6 +11,7 @@ import ShowBooksScreen from './pages/ShowBooksScreen'
 import UserProfile from './pages/UserProfile'
 import SnakeGame from './pages/SnakeGame/SnakeGame';
 import PokemonList from './pages/PokemonList/PokemonList';
+import PokemonDetail from './pages/PokemonDetail/PokemonDetail';
 
 // This app is a counter application
 
@@ -59,6 +60,7 @@ function App() {  // App component - This is ultimate parent component of my web
           <Route path="/user-profile" element={<UserProfile />} />
           <Route path="/snake" element={<SnakeGame />} />
           <Route path="/pokemon" element={<PokemonList />} />
+          <Route path="/pokemon/detail/:name" element={<PokemonDetail />} />
         </Routes>
       </div>
 

@@ -7,7 +7,6 @@ Documentation: https://pokeapi.co/docs/v2
 Website: https://pokeapi.co/
 
 
-1. A list of all the pokemons which are paginated
-2. Implement a search bar to filter pokemon by name
-3. I want a to click on any one of the pokemon from the list and dsiplay its infromation in a single page like image, ability, stats, type etc etc
-4. Filter pokemon, there should be a container where I can select let's say the ability or type or anything of a pokemon and show only those pokemons inside my frotend
+[X] A list of all the pokemons which are paginated
+[X] Implement a search bar to filter pokemon by name
+[X] I want a to click on any one of the pokemon from the list and dsiplay its infromation in a single page like image, ability, stats, type etc etc

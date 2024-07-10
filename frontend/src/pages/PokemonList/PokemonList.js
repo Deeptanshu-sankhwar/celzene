@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react';
 import Button from '../../components/Button/button';
 import './PokemonList.css'
 import Loader from '../../components/Loader/Loader'
+import { Link } from 'react-router-dom'
 
 function PokemonList()  {
     const limit = 20;
     const [pokemon, setPokemon] = useState([]);
     const [page, setPage] = useState(0);
     const [isLoading, setIsLoading] = useState(false)
+    const [searchQuery, setSearchQuery] = useState('')
 
     // The function to get a list of pokemons
     const fetchPokemons = async () => {
@@ -41,15 +43,22 @@ function PokemonList()  {
         setPage(newPage)
     }
 
+    const handleSearchQueryChange = (e) => {
+        setSearchQuery(e.target.value)
+    }
+
+    const filteredPokemon = pokemon.filter((poke) => poke.name.includes(searchQuery))
+
     return (
         <div>
+            <input type="text" value={searchQuery} onChange={handleSearchQueryChange} />
             {
                 isLoading ? <Loader /> : 
                 
-                    pokemon.map((poke, index) => {
+                filteredPokemon.map((poke, index) => {
                         return (
                             <div className="pokemon" key={index}>
-                                {poke.name}
+                                <Link to={`/pokemon/detail/${poke.name}`}>{poke.name}</Link>
                             </div>
                         )
                     })
