@@ -1,0 +1,20 @@
+Create a Quiz Application!
+
+Database:
+Design the schema of this application. Feel free to add or delete any collections based on your design or convenience.
+
+Plan what APIs you'd need to create this application.
+
+Backend:
+1. You need to be able to login/signup
+2. You need to have a usere profile and a game models
+3. You should store the number of games played by the user inside the user profile
+4. In Game models there shall be list of questions that can be asked to a user
+5. Every game shall comprise of 10 multiple choice answer questions with 4 options each.
+
+Frontend:
+1. Create the UI for signup/login
+2. Create a U for starting the game which shall display me 10 questions and I need to select one option as my answer within time limit of 60 seconds.
+3. If I fail to answer within 60 seconds, my point would not be counted and I will immediately move to the next question.
+4. When my 10 questions are over, I will see a summary of what questions did I answer correctly and which ones were wrong, alongwith my final score.
+5. In my user profile, I can see all the list of games that I have played and my scores in each of them, alongwith the date and time at which they were played.
