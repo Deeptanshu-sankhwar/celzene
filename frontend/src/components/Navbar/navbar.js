@@ -15,7 +15,7 @@ function Navbar()   {
                 (width < 960) && <button className="hamburger" onClick={() => setShowNav(!showNav)}>Toggle Navbar</button>
             }
             {
-                showNav && 
+                 
                 <ul>
                     <li>
                         <Link to="/">Signup</Link>
@@ -29,17 +29,20 @@ function Navbar()   {
                     <li>
                         <Link to="/counter">Counter</Link>
                     </li> */}
-                    <li>
+                    {/* <li>
                         <Link to="/showUsers">Show Users</Link>
                     </li>
                     <li>
                         <Link to="/books">Show Books</Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to="/user-profile">User Profile</Link>
                     </li>
                     <li>
                         <Link to="/snake">Snake Game</Link>
+                    </li>
+                    <li>
+                        <Link to="/rockpaperscissor">RPS Game</Link>
                     </li>
                     <li>
                         <Link to="/pokemon">Pokemon</Link>
