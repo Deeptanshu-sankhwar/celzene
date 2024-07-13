@@ -1,0 +1,25 @@
+.gamelist {
+    display: flex;
+    justify-content: space-around;
+    padding: 18px;
+    border: 1px solid black;
+    margin: 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 24px;
+    box-shadow: 5px 10px #888888;
+}
+
+.gamelist button {
+    background-color: antiquewhite;
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 5px 5px rgba(250, 215, 215, 0.943);
+}
+
+.gamelist button:hover {
+    transition: 1s;
+    box-shadow: none;
+}

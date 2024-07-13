@@ -1,0 +1,5 @@
+Quiz Application!
+
+1. Right now I am just updating the score of the game on the UI. Call the increase game point API everytime a user answers correctly.
+2. Design the application to look better.
+3. Play around to optimise this app wherever you can and share your ideas. (open ended question)
