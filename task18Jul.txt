@@ -1,0 +1,7 @@
+1. Go to celzene/fronted, and create a dockerfile for celzene frontend.
+2. Build the docker image for this file
+3. Run the created docker image on a docker container
+
+4. Go to celzene/QuizApp/fronted, and create a dockerfile for celzene frontend.
+5. Build the docker image for this file
+6. Run the created docker image on a docker container

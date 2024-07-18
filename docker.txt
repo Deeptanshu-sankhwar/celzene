@@ -47,9 +47,9 @@ EXPOSE: Informs Docker that the container listens on port 4000
 CMD: Secifies the command to run the application
 
 10. Once I have created my Dockerfile, I need to build the Docker image
-docker build -t <directory of my project> .
+docker build -t <name of my iamge> .
 docker build: Builds an image from the Dockerfile in the current repository
--t <directory name>: Tags the image with the name as directory name
+-t <name of my image>: Tags the image name
 
 11. Run the container with this custom docker image
 docker run -d -p <port>:<port> <name of the image>
