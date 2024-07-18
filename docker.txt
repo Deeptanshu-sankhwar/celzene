@@ -1,0 +1,62 @@
+Docker CLI vs Docker Desktop Application
+CLI : Command Line Interface (This allows me to interact with my software via terminal or any possible command line tool using commands and flags). All the actions that I can perform using my mouse clicks on the desktop app, I can perform them on my terminal using commands on my CLI.
+Docker Desktop App: When I interact with my software using the desktop application GUI (Graphical User Interface). This gives me a UI to interact with and perform some actions
+
+0. Logging in to your docker account from CLI. Basically, in order for you to pull any image from the docker hub, you need to verify your identity on docker.
+docker login --username <your_username_here>
+
+1. Verify the installation of Docker
+docker --version
+
+Running our first container
+if the specifications of my machine is an image, then my machine is a container
+
+Docker Hub: An online marketplace for multiple image that docker already has prebuilt. But if we want to build our own image, we can do that as well by customizing each config in our Dockerfile.
+
+2. Pull the image (starter image: hello-world)
+docker pull <image name for the image from docker hub>
+docker pull hello-world
+
+3. Run the container (At this step, I have initialised the configuration, now I need to intialise my machine to run these configurations)
+docker run <container name>
+
+Docker CLI Basics
+4. List running docker containers
+docker ps
+
+5. Stopping a running container
+docker stop <container id or container name>
+
+6. Remove a stopped container
+docker rm <container id or container name>
+
+7. List all the docker images on my system
+docker images
+
+8. Remove a docker image from my system
+docker rmi <image id or image name>
+
+9. Creating a custom docker image
+We need to create a Dockerfile in every code repository which needs to have its own docker image. Traditionally we name these files as "Dockerfile"
+FROM: Specifies the base image (Node Js version 22.3.0)
+WORKDIR: Sets the working directory inside the container
+COPY: Copies package.json and package-lock.json to the working directory
+RUN: installs all the dependencies of the container
+COPY: Copies rest of all the application files inside the container
+EXPOSE: Informs Docker that the container listens on port 4000
+CMD: Secifies the command to run the application
+
+10. Once I have created my Dockerfile, I need to build the Docker image
+docker build -t <directory of my project> .
+docker build: Builds an image from the Dockerfile in the current repository
+-t <directory name>: Tags the image with the name as directory name
+
+11. Run the container with this custom docker image
+docker run -d -p <port>:<port> <name of the image>
+docker run -d -p 4000:4000 backend
+
+12. After successfully running my Docker container, I can see the logs using:
+docker logs <container id>
+
+13. If I want to have persisting logs for my Docker container, I can use the command:
+docker logs <container id> -f
