@@ -1,0 +1,45 @@
+Difference between SQL & NoSQL
+- SQL is a tightly coupled database but NoSQL is a loosely coupled database
+
+What is SQL?
+- SQL (Structured Query Language) is a standard language for managing and manipulating database. Types of SQL database are MySQL, MS SQL, etc. We can use the SQL query language to query data, insert data, delete data, update data, modify data structures.
+
+Components of SQL: (Top down hierarchy)
+1. Database: A collection of data, which may include tables, views, schema, etc.
+2. Table: A collection of rows and columns inside a database
+3. Row: A single record in a table
+4. Column: A field in a table
+
+Types of SQL statements:
+[IMP] 1. DDL (Data Definition Language): CREATE, ALTER, DROP
+[VERY IMP] 2. DML (Data Manipulation Language): SELECT, INSERT, UPDATE, DELETE
+3. DCL (Data Control Language): GRANT, REVOKE
+4. TCL (Transaction Control Language): COMMIT, ROLLBACK
+
+Basic Queries:
+1. SHOW DATABASES; 
+It shows the databases which I currently have in my system.
+2. CREATE DATABASE celzene;
+It creates a new database with the name celzene
+3. USE celzene;
+It sets the global context of my SQL queries to celzene database.
+4. CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(100), email VARCHAR(100) UNIQUE, age INT);
+It creates a new table inside the database celzene called users
+5. INSERT INTO users (id, name, email, age) VALUES (1, 'Praveen', 'praveen@celzene.com', 21);
+Insert a data row inside the users table in my celzene database
+6. SELECT * FROM users;
+This gives me all the data rows which exists inside my users table of celzene database
+7. UPDATE users SET age = 31 WHERE email = 'praveen@celzene.com';
+This query will update the age of the user with email 'praveen@celzene.com' and update it to 31
+8. DELETE FROM users WHERE email = 'praveen@celzene.com';
+This will delete the data row from the users table in my celzene database where the email of the user is 'praveen@celzene.com'
+
+Advance Queries:
+1. SELECT * FROM users WHERE age > 25;
+This filters my data rows where the age of the user is greater than 25
+2. SELECT * FROM users ORDER BY age DESC;
+This sorts the data inside my users table based on the age of the users in decending order
+3. SELECT COUNT(*) FROM users;
+This gives me the count of elements present inside my users table
+4. SELECT AVG(age) FROM users;
+This gives me the average values of all the ages inside the users table

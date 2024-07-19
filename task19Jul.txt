@@ -1,0 +1,14 @@
+Problem Statement:
+
+1. Write a query to create a an employees table which has first_name, last_name, salary, job_title,department,  and other fields
+2. Write a query to select all the columns from the employees table
+3. Write a query to select the first_name and last_name of the employees Table
+4. Write a query to select the first_name and salary from the employees table for the the employess with a salary greater than 50000
+5. Write a query to select the distinct job_title from the employees table
+6. Write a query to select all columns from the employees table where the departments is 'Sales'
+7. Wtite a query to select all columns from the employees table and sort the result by last_name in ascending order
+8. Write a query to select all columns from the employees table and sort the result by salary in descending order
+9. Write a query to count the number of employees in the employees table
+10. Write a query to find the average salary of employees in the employees table where the department is 'IT'
+11. Write a query to find the maximum salary in the employees table
+12. Write a query to find the sum of all the salaries inside the employees table
