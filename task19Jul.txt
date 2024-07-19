@@ -1,5 +1,7 @@
 Problem Statement:
 
+Exception: You will create a database which would have the employees and also have some valid data inside it which can be tested upon.
+
 1. Write a query to create a an employees table which has first_name, last_name, salary, job_title,department,  and other fields
 2. Write a query to select all the columns from the employees table
 3. Write a query to select the first_name and last_name of the employees Table
