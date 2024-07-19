@@ -1,13 +1,26 @@
 Problem Statement:
 
-Exception: You will create a database which would have the employees and also have some valid data inside it which can be tested upon.
+Expectation: You will create a database which would have the employees and also have some valid data inside it which can be tested upon.
 
-1. Write a query to create a an employees table which has first_name, last_name, salary, job_title,department,  and other fields
-2. Write a query to select all the columns from the employees table
-3. Write a query to select the first_name and last_name of the employees Table
-4. Write a query to select the first_name and salary from the employees table for the the employess with a salary greater than 50000
-5. Write a query to select the distinct job_title from the employees table
-6. Write a query to select all columns from the employees table where the departments is 'Sales'
+[X] Write a query to create a an employees table which has first_name, last_name, salary, job_title,department,  and other fields
+CREATE TABLE employees (id INT PRIMARY KEY, first_name VARCHAR(100), last_name VARCHAR(100), salary INT, job_title VARCHAR(100), department VARCHAR(100));
+INSERT INTO employees (id, first_name, last_name, salary, job_title, department) VALUES (1, 'Kranthi', 'Kumar', 70000, 'software engineer', 'IT');
+
+[X] Write a query to select all the columns from the employees table
+SELECT * FROM employees;
+
+[X] Write a query to select the first_name and last_name of the employees Table
+SELECT first_name, last_name FROM employees;
+
+[X] Write a query to select the first_name and salary from the employees table for the the employess with a salary greater than 50000
+SELECT first_name, salary FROM employees WHERE salary > 50000;
+
+[X] Write a query to select the distinct job_title from the employees table
+SELECT DISTINCT job_title FROM employees;
+
+[X] Write a query to select all columns from the employees table where the departments is 'Sales'
+SELECT * FROM employees WHERE department = 'Sales';
+
 7. Wtite a query to select all columns from the employees table and sort the result by last_name in ascending order
 8. Write a query to select all columns from the employees table and sort the result by salary in descending order
 9. Write a query to count the number of employees in the employees table
