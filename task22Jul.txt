@@ -1,8 +1,48 @@
 1. Write a query to find all the employees who have placed atleast one order. Display the employees first_name, last_name and the number of orders they have placed.
 Expectation: You have an employees table and you have an orders table
 
-2. Write a query to find all products that have been orders at least once along with the total quanity ordered for each product. Display the product_name and total_quantity_ordered.
+Answer: 
+Create a order, employees table
+Order: id, name, price, employee_id (employee_id is a foreign key to id of the employee inside the order table)
+Employee: id, first_name, last_name
+Using inner join such that order.employee_id = employee.id
+
+SELECT e.first_name, e.last_name, COUNT(o.id), o.name, o.price FROM employees e INNER JOIN orders o ON e.id = o.employee_id GROUP BY e.first_name, e.last_name, o.name, o.price;
+
+SELECT e.first_name, e.last_name, COUNT(o.employee_id) as no_of_orders FROM employees e INNER JOIN orders o ON e.id = o.employee_id GROUP BY e.first_name, e.last_name;
+
+2. Write a query to find all products that have been ordered at least once along with the total quanity ordered for each product. Display the product_name and total_quantity_ordered.
 Expectation: You have a order_details table and a products table
+
+Condition: order_details.product_id = product.id
+
+SELECT p.product_name, SUM(o.quantity) AS total_quantity_ordered FROM products p INNER JOIN order_details o ON p.id = o.product_id GROUP BY p.product_name;
+
+the product_id inside my order table is a foreign key to the product table id.
 
 3. Write a query to find the department name and the average salary of employees in each department, but only for departments with more than 5 employees.
 Expectation: You have a departments table and you have a employees table.
+
+employee.department_id = department.id
+
+SELECT d.name, AVG(e.salary) AS average_salary FROM departments d INNER JOIN employees e ON e.department_id = d.id GROUP BY d.name HAVING COUNT(e.id) > 5;
+
+NOTE: All these questions are not gonna be solved only by one type of join. You need to smartly determine which join to use.
+
+4. Write a query to find all employees and their respective orders. If an employee has not placed any orders, still display the employees first_name and last_name with NULL values for order details.
+
+5. Write a query to find all the customers and their orders. If a customer has not placed any orders, include their customer_id and customer_name in the result with NULL values for order details.
+
+6. Write a query to find all projects and employees working on them. Include projects that do not have any employess assigned to them and display NULL values for employee detail in such cases.
+
+7. Write a query to find all orders and the employees who placed them. Include ordere even oif there is no matching employee in the employees table, and display NULL values for employee details in such cases.
+
+8. Write a query to find all sales records and the products associated with each sale. Include sales records even if there is no matching product in the products table, and display NULL values for product details in such cases.
+
+9. Write a query to find all employess and their respective departments. Include departments even if there no matching employee in the employees table, and display NULL values for employee details in such cases.
+
+10. Write a query to find the top 3 employees with the highest total sales. Display the emplpyee's first_name, last_name and total_sales. Assume the sales table has columns of employee_id and sale_amount.
+
+11. Write a query to find the names of employees who do not hav a manager (assuming manager_id in employees table). Display the employees first_name and last_name.
+
+12. Write a query to find all customers who have placed an order along with the total amount they have spent. Display the customer_id, customer_name and total_spent.

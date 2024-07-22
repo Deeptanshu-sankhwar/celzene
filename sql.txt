@@ -58,3 +58,29 @@ This would output all the employees data alongwith their relationship to the dep
 SELECT e.id as employeeId, e.first_name, e.last_name, e.salary, e.job_title, e.department, d.id as departmentId, d.name FROM employees as e RIGHT JOIN departments as d ON e.department = d.name;
 
 This wold ouput all the department data alongwith their relationship to the employees table, but it would only show the employees table data whcih justify the relationship.
+
+PRIMARY KEY: A primary key is a unique id or address which can be used to determine a unique row of data inside a table.
+
+FOREIGN KEY: A foreign key is a an id or address which exists as a primary key in another table. It is used to arrive a relationship between two tables.
+
+HAVING vs WHERE clause
+- WHERE is used when we are certain of an exact value and an exact condition.
+- HAVING is used when we are not certain of an exact value but we know a set of values in which our condition obeys or is true.
+
+GROUP BY clause
+- GROUP by is just a clause where identical data is arranged into group of columns.
+
+Aggregate functions: COUNT, MAX, MIN, AVG, SUM, etc
+Group the rows by department and count the number of emmployees in each department
+SELECT department, COUNT(employee_id) FROM employees GROUP BY department;
+1 IT Akshita
+2 Sales Praveen
+3 IT Kavya
+4 Dance George
+5 IT Praveen
+
+1 IT Akshita 3
+3 IT Kavya 3
+5 IT Praveen 3
+2 Sales Praveen 1
+4 Dance George 1
