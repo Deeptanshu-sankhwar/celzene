@@ -1,0 +1,8 @@
+1. Write a query to find all the employees who have placed atleast one order. Display the employees first_name, last_name and the number of orders they have placed.
+Expectation: You have an employees table and you have an orders table
+
+2. Write a query to find all products that have been orders at least once along with the total quanity ordered for each product. Display the product_name and total_quantity_ordered.
+Expectation: You have a order_details table and a products table
+
+3. Write a query to find the department name and the average salary of employees in each department, but only for departments with more than 5 employees.
+Expectation: You have a departments table and you have a employees table.

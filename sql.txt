@@ -43,3 +43,18 @@ This sorts the data inside my users table based on the age of the users in decen
 This gives me the count of elements present inside my users table
 4. SELECT AVG(age) FROM users;
 This gives me the average values of all the ages inside the users table
+
+SQL JOINS
+1. INNER JOIN
+Perform an inner join between the tables departments and employees on the condition where the name of the ddepartment is equal to the department of employees
+SELECT e.id as employeeId, e.first_name, e.last_name, e.salary, e.job_title, e.department, d.id as departmentId, d.name FROM employees as e INNER JOIN departments as d ON e.department = d.name;
+
+2. LEFT JOIN
+SELECT e.id as employeeId, e.first_name, e.last_name, e.salary, e.job_title, e.department, d.id as departmentId, d.name FROM employees as e LEFT JOIN departments as d ON e.department = d.name;
+
+This would output all the employees data alongwith their relationship to the department table, but it would only show the department table data which justify the relationship.
+
+3. RIGHT JOIN
+SELECT e.id as employeeId, e.first_name, e.last_name, e.salary, e.job_title, e.department, d.id as departmentId, d.name FROM employees as e RIGHT JOIN departments as d ON e.department = d.name;
+
+This wold ouput all the department data alongwith their relationship to the employees table, but it would only show the employees table data whcih justify the relationship.
