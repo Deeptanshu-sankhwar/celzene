@@ -48,3 +48,11 @@ NOTE: All these questions are not gonna be solved only by one type of join. You 
 12. Write a query to find all customers who have placed an order along with the total amount they have spent. Display the customer_id, customer_name and total_spent.
 
 HINT: Think about what kind of join shall be used, and where there shall be an extra sub query to your normal query or not.
+
+--------------------------------------------------------------------------------
+
+Complete the integration of your MySQL database with your node js server 
+Be able to query atleast one table in your API resonse.
+Organise your code in Controller and Route folders formats
+Write the authentication middlewares for your APIs
+Write the authorisation middlwares for your APIs
