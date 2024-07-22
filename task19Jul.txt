@@ -22,8 +22,19 @@ SELECT DISTINCT job_title FROM employees;
 SELECT * FROM employees WHERE department = 'Sales';
 
 7. Wtite a query to select all columns from the employees table and sort the result by last_name in ascending order
+SELECT * FROM employees ORDER BY last_name;
+
 8. Write a query to select all columns from the employees table and sort the result by salary in descending order
+SELECT * FROM employees ORDER BY salary DESC;
+
 9. Write a query to count the number of employees in the employees table
+SELECT COUNT(*) FROM employees;
+
 10. Write a query to find the average salary of employees in the employees table where the department is 'IT'
+SELECT AVG(salary) FROM employees;
+
 11. Write a query to find the maximum salary in the employees table
+SELECT MAX(salary) FROM employees;
+
 12. Write a query to find the sum of all the salaries inside the employees table
+SELECT SUM(salary) FROM employees;
