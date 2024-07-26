@@ -1,1 +1,66 @@
-1. Go to ama.txt, and re structure the entire project for celzene/QuizApp/backend into the folders discussed in answer 1 of ama.txt. You dont have to necessarily utilise all the folders as there are folders like /certs or /tests which are of no use to us currently. Hence, smartly identify which folders you can create and re structure your code for celzene/QuizApp/backend into their resepective meaningful folders.
+I. Go to ama.txt, and re structure the entire project for celzene/QuizApp/backend into the folders discussed in answer 1 of ama.txt. You dont have to necessarily utilise all the folders as there are folders like /certs or /tests which are of no use to us currently. Hence, smartly identify which folders you can create and re structure your code for celzene/QuizApp/backend into their resepective meaningful folders.
+
+
+II. Question is below!
+Simple Event Scheduler
+Objective: Develop a simple event scheduler application that allows users to schedule, view, update, and cancel events. The application should be built using React for the frontend, Node.js/Express for the backend, and MongoDB for the database. The entire project should be designed to be completed in approximately 2 hours.
+
+Functional Requirements
+User Interface (Frontend - React)
+
+Event List View:
+
+Display a list of all scheduled events.Show key details such as event title, date, time, location, and description.Include options to edit or delete each event.
+
+1. Create a page component for list view
+2. Add a useEffect handler which calls the API to fetch all the events on PAGE LOAD
+3. Create state variable to store the events coming from the API
+4. Display these events stored inside the state variable using a map function.
+Event Calendar View:
+
+Display events in a calendar format, with each event shown on its corresponding date.Highlight today's date.
+Event Creation:
+
+A form to add a new event with fields for:Title (required, string)Date (required, date)Time (optional, time)Location (optional, string)Description (optional, string)Validate required fields before submission.
+Event Editing:
+
+An interface to edit an existing event.Pre-fill the form with the current event details.Validate required fields before submission.
+Event Deletion:
+
+Allow users to delete an event.Confirm before deletion to avoid accidental removal.
+Backend (Node.js/Express)
+
+API Endpoints:
+
+GET /events Retrieve a list of all events.
+POST /events Create a new event with the provided details.
+PUT /events/ Update an existing event identified by its ID.
+Data Validation:
+
+Ensure that required fields are present and valid when creating or updating events.
+Error Handling:
+
+Provide appropriate error messages for invalid data or server errors.Handle cases where an event ID does not exist.
+Database (MongoDB)
+
+Data Model:
+
+A collection named events with the following schema:id: Unique identifier for the event (auto-generated).title: String, required.date: Date, required.time: Time, optional.location: String, optional.description: String, optional.
+Data Persistence:
+
+Ensure that event data is stored persistently in the database.Support CRUD operations (Create, Read, Update, Delete).Non-Functional Requirements
+Security:
+
+Validate all inputs to prevent injection attacks.Secure the API endpoints to prevent unauthorized access (optional for initial build).
+Maintainability:
+
+Code should be modular, well-documented, and easy to maintain or extend in the future.Project Constraints
+
+Time: The project should be designed to be completed within approximately 2 hours.
+
+Scope: Focus on core features for scheduling and managing events. Advanced features (like user authentication, reminders, etc.) can be added in future iterations.
+
+DeliverablesFrontend: A React application that meets the user interface requirements.Backend: A Node.js/Express server with a RESTful API for managing events.Database: A MongoDB database storing event data.Documentation: Basic documentation outlining how to set up and run the application.
+This expanded problem statement provides a comprehensive overview of the project requirements, ensuring that the development team has a clear understanding of the goals and expectations.
+
+Attach your Github repo link as a solution to this!
