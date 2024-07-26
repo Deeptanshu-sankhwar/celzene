@@ -55,8 +55,11 @@
 const express = require('express'); // npm install express
 const { Server } = require('socket.io'); // npm install socket.io
 
+const { PORT } = require('./constants/constants');
+
+const { connectToDatabase } = require('./db/mongodb')
+
 // import mongoose package - has functions required to perform operations in mongodb starting all the way connecting to the cluser to making changes in the data
-const mongoose = require('mongoose'); // npm install mongoose
 var cors = require('cors')
 
 const app = express();
@@ -65,17 +68,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-const port = 4000
-
-const mongoUrl = "mongodb+srv://consultingleera:SY1RX8KXb8cwP8Bu@cluster0.frz9sdy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
-// Connect to MongoDB
-mongoose.connect(mongoUrl, {});
-
-// Event listeners for MongoDB connection
-mongoose.connection.on('connected', () => {
-    console.log("Connected to MongoDB successfully");
-})
+connectToDatabase();
 
 const userRoutes = require('./routes/userRoute')
 const bookRoutes = require('./routes/bookRoute')
@@ -84,8 +77,8 @@ app.use('/api', userRoutes)
 app.use('/api', bookRoutes)
 
 // listen on port 4000 and start my server
-const server = app.listen(port, () => {
-    console.log("My server has started on the port " + port)
+const server = app.listen(PORT, () => {
+    console.log("My server has started on the port " + PORT)
 })
 
 // HTTP and websockets are seprarate networking protocols, hence we need to listen on different ports for http1 and websockets
