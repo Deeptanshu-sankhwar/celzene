@@ -1,0 +1,24 @@
+Def:
+- Library: It a project or a peice of code with importable functions that can be used.
+
+1. How to structure a Node JS backend? [Ideology]
+The subjective components of any backend are follows:
+- a place where all the routes of my APIs are aggregated [/routes]
+- a place where all the data types exist which I use in my backend to either retreive, update or insert something (schema) [/models]
+- a place where I have aggregated all the libraries (packages) I want to use in my backend [/lib]
+- a place which manages all the file management stuff, it can include, uploading a file, retreiving a file or just storing a file [/uploads, /files]
+- a place where we have the business logic that shall be triggered when an API route is hit [/controllers]
+- a place to aggregate all the middleware functions that get called between the request and the response [/middlwares]
+- server.js, port details, index.js, main.js
+- a place where all my db connections are aggregated [/db]
+- a place where all the files necessary for deloyments exists [/deploy]
+- a place where all the data validations exists [/validations, /validators]
+- a place where all the utility functions exist that get called multiple times by our business logic [/utils]
+- a place where all the encryption/decryption happens [/hash, /encrypt]
+- a place where all the secret keys are stored, these keys can be sensitive passwords or anything sensitive which are not meant to be shared with others [/env]
+- a place where all the queries to my database exists [/schema]
+- a place where all the documentation is stored for the project [/docs]
+- a place where all the constants exists that can be used at multiple places in the project [/constants, /consts]
+- a place where all the test cases to test our application exists [/test]
+- a place where all the certificates for my application exists [/certs, /certificates]
+
