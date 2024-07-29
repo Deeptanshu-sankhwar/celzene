@@ -1,0 +1,20 @@
+.event-item {
+    border: 1px solid black;
+    width: 320px;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: rgb(99, 209, 209, 0.45);
+    margin: 10px 12px;
+}
+
+.event-item-key {
+    font-weight: 600;
+    margin: 12px 0;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
