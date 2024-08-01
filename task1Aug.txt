@@ -1,0 +1,17 @@
+// Install Redis (I will share a video to install Redis on windows)
+
+
+1. Your company is building an e-commerce website with a high number of read operations for product details. Would Redis be a suitable solution for caching product details? Why or why not?
+Answer: 
+
+2. You are designing a logging system for a large-scale application that requires storing and querying large amounts of log data over time. Would Redis be a good choice for this system? Explain your reasoning.
+Answer: 
+
+3. A financial application requires strong consistency for transaction records. Would Redis be appropriate as the primary datastore? Why or why not?
+Answer: 
+
+4. Complete the controller functions for SQL app.
+
+5. Write the middlewares for authentication, and authorisation in the SQL app.
+
+6. I will be sharing a video on some fundamental, please watch it without fail before tomorrow.
