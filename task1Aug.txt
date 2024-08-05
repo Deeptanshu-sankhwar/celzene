@@ -2,16 +2,25 @@
 
 
 1. Your company is building an e-commerce website with a high number of read operations for product details. Would Redis be a suitable solution for caching product details? Why or why not?
-Answer: 
+Answer: Yes!
+- Reduces the load on database
+- Since, its in memory operation is much faster
+- It can be used as a data store for building recommendation system as where I can cache the frequent products or the most popular products within a specific geographical location.
 
 2. You are designing a logging system for a large-scale application that requires storing and querying large amounts of log data over time. Would Redis be a good choice for this system? Explain your reasoning.
-Answer: 
+Answer: No!
+- Redis is an in-memory database so it is limited by the amount of memory available RAM
+- Cost of application would be very high.
+- Complex opertations on heavy data is not possible
+- In the case of point of failure, all our data inside would be gone.
 
 3. A financial application requires strong consistency for transaction records. Would Redis be appropriate as the primary datastore? Why or why not?
-Answer: 
+Answer: No! (I will use it as a secondary data store with a very small memory life)
+- Memory Constraints
+- Cannot afford point of failures in financial apps
 
-4. Complete the controller functions for SQL app.
+[X] Complete the controller functions for SQL app.
 
-5. Write the middlewares for authentication, and authorisation in the SQL app.
+[X] Write the middlewares for authentication, and authorisation in the SQL app.
 
 6. I will be sharing a video on some fundamental, please watch it without fail before tomorrow.
