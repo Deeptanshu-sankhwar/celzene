@@ -76,44 +76,44 @@ client.del('title', (err, reply) => handleCallback(err, reply))
 // Lists
 // Function to push values inside a list
 // the syntax of rpush is rpush(key, ...values, callback)
-client.rpush('title-list', 'value1', 'value2', 'value3', 'value4', (err, reply) => handleCallback(err, reply))
+client.rPush('title-list', 'value1', 'value2', 'value3', 'value4', (err, reply) => handleCallback(err, reply))
 
 // RPUSH title-list value1 value2 value3 value4
 
 // Function to retreive all the list values
 // the syntax of lrange is lrange(key, startingIndex, endingIndex, callback)
-client.lrange('title-list', 0, -1, (err, reply) => handleCallback(err, reply))
+client.lRange('title-list', 0, -1, (err, reply) => handleCallback(err, reply))
 
 // LRANGE title-list 0 -1
 
 // Sets
 // Add members to the set
 // the syntax of sadd is sadd(key, ...values, callback)
-client.sadd('title-set', 'value1', 'value2', 'value3', (err, reply) => handleCallback(err, reply))
+client.sAdd('title-set', 'value1', 'value2', 'value3', (err, reply) => handleCallback(err, reply))
 
 // SADD title-set value1 value2 value3
 
 // Function to retreive all the items in a set
-client.smembers('title-set', (err, reply) => handleCallback(err, reply))
+client.sMembers('title-set', (err, reply) => handleCallback(err, reply))
 
 // SMEMBERS title-set
 
 // Hashes
 // Set fields in a hash
 // The syntax for hset is hset(key, field1, value1, field2, value2, ..., callback)
-client.hset('title-hash', 'field1', 'value1', 'field2', false, 'field3', ['1', 2, 3], (err, reply) => handleCallback(err, reply))
+client.hSet('title-hash', 'field1', 'value1', 'field2', false, 'field3', ['1', 2, 3], (err, reply) => handleCallback(err, reply))
 
 // HSET title-hash field1 value1 field2 false field3 "['1', 2, 3]"
 
 // Retreive all the hash fields
 // The syntax of hgetall is hgetall(key, callback)
-client.hgetall('title-hash', (err, reply) => handleCallback(err, reply))
+client.hGetAll('title-hash', (err, reply) => handleCallback(err, reply))
 
 // HGETALL title-hash
 
 // Retreive a given field from my hash set
 // The syntax of hget is hget(key, field, callback)
-client.hget('title-hash', 'fieldname', (err, reply) => handleCallback(err, reply))
+client.hGet('title-hash', 'fieldname', (err, reply) => handleCallback(err, reply))
 
 // HGET title-hash field3
 
