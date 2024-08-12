@@ -1,7 +1,9 @@
-1. Go to sql/backend, and modularise every single Redis API I have written in the session over the layout of models/routers/controllers. Right now all of the APIs are in server.js, break them down into thir respective folders.
+1. Go to sql/backend, and modularise every single Redis API I have written in the session over the layout of models/routers/controllers. Right now all of the APIs are in server.js, break them down into their respective folders.
 
-2. Create an autocomplete search service. In sql project we have users, and their activyt logs. Cache the users in Redis such that you can perform autocomplete on users from Redis.
+2. Create an autocomplete search service. In sql project we have users, and their activity logs. Cache the users in Redis such that you can perform autocomplete on users from Redis.
 Perform the autocomplete on both Redis & SQL, and then compare the time it takes to perform the action on both Redis and SQL.
+
+- Approach: Get all the saved users from Redis, an then do a substring search over them for the user you are trying to search.
 
 3. While inserting a user with the create user API in sql, you need to insert it into Redis as well and make this operation atomic. (Making this operation atomic is optional for now)
 
