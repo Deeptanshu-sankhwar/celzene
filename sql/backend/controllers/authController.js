@@ -16,9 +16,17 @@ client.on('error', (err) => {
 // connect to the redis cluster
 client.connect();
 
+// [X] Create a variable isNewUserAdded to be stored inside Redis
+// [X] Update this variable during insertion of a user
+// [X] In get all users, fetch the user based upon the value of this variable
+
+
 exports.register = async (req, res) => {
     // We are parsing the request body
     const { name, email, password, role, age } = req.body;
+
+    // create the new variable isNewUserAdded and set it to true
+    await client.set('isNewUserAdded', 'true')
 
     try {
         // We are hashing password
@@ -32,8 +40,10 @@ exports.register = async (req, res) => {
             }
 
             // We need to insert this same user inside Redis as well
+            const userRedis = JSON.stringify({name, email, password: hashedPassword, role, age})
             try {
-                await client.sAdd('users', {name, email, password: hashedPassword, role, age});
+                await client.sAdd('users', userRedis);
+                await client.set('isNewUserAdded', 'false')
             } catch (err)   {
                 return res.status(500).json({
                     success: false,
