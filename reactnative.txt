@@ -1,0 +1,16 @@
+Expo Cli in order to compile our react native code and transfor it into react code.
+
+1. Install Expo CLI
+npm install -g expo-cli
+
+2. Create a new react native project
+expo init <name of the project>
+
+3. Navigate to project
+cd <name of the project>
+
+4. Start the project
+yarn <start|android|ios|web>
+
+5. Install react-native-web dependencies
+npx expo install react-native-web react-dom @expo/metro-runtime
